@@ -1,0 +1,35 @@
+import { ConfigParams } from 'pip-services-commons-node';
+import { IConfigurable } from 'pip-services-commons-node';
+import { IReferences } from 'pip-services-commons-node';
+import { ICommandable } from 'pip-services-commons-node';
+import { CommandSet } from 'pip-services-commons-node';
+import { IReferenceable } from 'pip-services-commons-node';
+import { CommandValueV1 } from '../data/version1';
+export declare class MqttGatewayController implements IConfigurable, IReferenceable, ICommandable {
+    private _logger;
+    private _counters;
+    private _dependencyResolver;
+    private _dependencies;
+    private _commandSet;
+    private _initProcessor;
+    private _organizationInfoProcessor;
+    private _stateProcessor;
+    private _stateProcessor2;
+    private _commandProcessor;
+    private _signalProcessor;
+    private _pingProcessor;
+    private _statisticsProcessor;
+    configure(config: ConfigParams): void;
+    setReferences(references: IReferences): void;
+    getCommandSet(): CommandSet;
+    private lookupGateway;
+    private lookupDevice;
+    private onMessage;
+    sendCommands(correlationId: string, orgId: string, deviceId: string, values: CommandValueV1[], timestamp: number, callback?: (err: any, result: boolean) => void): void;
+    broadcastCommands(correlationId: string, orgId: string, values: CommandValueV1[], timestamp: number, callback?: (err: any, result: boolean) => void): void;
+    sendSignal(correlationId: string, orgId: string, deviceId: string, signal: number, timestamp: number, callback?: (err: any, result: boolean) => void): void;
+    broadcastSignal(correlationId: string, orgId: string, signal: number, timestamp: number, callback?: (err: any, result: boolean) => void): void;
+    pingGateway(correlationId: string, orgId: string, gatewayId: string, callback?: (err: any) => void): void;
+    pingDevice(correlationId: string, orgId: string, deviceId: string, callback?: (err: any) => void): void;
+    requestStatistics(correlationId: string, orgId: string, gatewayId: string, callback?: (err: any) => void): void;
+}

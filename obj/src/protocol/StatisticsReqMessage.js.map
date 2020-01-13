@@ -1,0 +1,1 @@
+{"version":3,"file":"StatisticsReqMessage.js","sourceRoot":"","sources":["../../../src/protocol/StatisticsReqMessage.ts"],"names":[],"mappings":";;AACA,uCAAoC;AAEpC,MAAa,oBAAqB,SAAQ,iBAAO;IAE7C;QACI,KAAK,CAAC,EAAE,CAAC,CAAC;IACd,CAAC;IAEM,MAAM,CAAC,MAAe;QACzB,KAAK,CAAC,MAAM,CAAC,MAAM,CAAC,CAAC;IACzB,CAAC;CAEJ;AAVD,oDAUC"}

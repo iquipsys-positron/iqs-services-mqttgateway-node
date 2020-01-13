@@ -1,0 +1,1 @@
+{"version":3,"file":"GatewayPingMessage.js","sourceRoot":"","sources":["../../../src/protocol/GatewayPingMessage.ts"],"names":[],"mappings":";;AACA,uCAAoC;AAEpC,MAAa,kBAAmB,SAAQ,iBAAO;IAE3C;QACI,KAAK,CAAC,CAAC,CAAC,CAAC;IACb,CAAC;IAEM,MAAM,CAAC,MAAe;QACzB,KAAK,CAAC,MAAM,CAAC,MAAM,CAAC,CAAC;IACzB,CAAC;CAEJ;AAVD,gDAUC"}
