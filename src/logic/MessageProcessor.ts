@@ -1,10 +1,10 @@
 let _ = require('lodash');
 let async = require('async');
 
-import { ConfigParams } from 'pip-services-commons-node';
-import { IConfigurable } from 'pip-services-commons-node';
-import { NotFoundException } from 'pip-services-commons-node';
-import { InvalidStateException } from 'pip-services-commons-node';
+import { ConfigParams } from 'pip-services3-commons-node';
+import { IConfigurable } from 'pip-services3-commons-node';
+import { NotFoundException } from 'pip-services3-commons-node';
+import { InvalidStateException } from 'pip-services3-commons-node';
 
 import { OrganizationV1 } from 'pip-clients-organizations-node';
 import { GatewayV1 } from 'iqs-clients-gateways-node';

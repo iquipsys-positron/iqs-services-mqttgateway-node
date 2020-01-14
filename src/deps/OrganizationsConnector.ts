@@ -1,8 +1,8 @@
 let _ = require('lodash');
 let async = require('async');
 
-import { ILogger } from 'pip-services-components-node';
-import { BadRequestException } from 'pip-services-commons-node';
+import { ILogger } from 'pip-services3-components-node';
+import { BadRequestException } from 'pip-services3-commons-node';
 
 import { GatewayV1 } from 'iqs-clients-gateways-node';
 import { OrganizationV1 } from 'pip-clients-organizations-node'; 

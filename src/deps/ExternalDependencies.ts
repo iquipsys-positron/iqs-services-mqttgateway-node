@@ -1,5 +1,5 @@
-import { CompositeLogger } from 'pip-services-components-node';
-import { CompositeCounters } from 'pip-services-components-node';
+import { CompositeLogger } from 'pip-services3-components-node';
+import { CompositeCounters } from 'pip-services3-components-node';
 
 import { IOrganizationsClientV1 } from 'pip-clients-organizations-node';
 import { IDevicesClientV1 } from 'iqs-clients-devices-node';

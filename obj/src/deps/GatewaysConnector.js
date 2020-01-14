@@ -2,10 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 let _ = require('lodash');
 let async = require('async');
-const pip_services_commons_node_1 = require("pip-services-commons-node");
-const pip_services_commons_node_2 = require("pip-services-commons-node");
-const pip_services_commons_node_3 = require("pip-services-commons-node");
-const pip_services_commons_node_4 = require("pip-services-commons-node");
+const pip_services3_commons_node_1 = require("pip-services3-commons-node");
+const pip_services3_commons_node_2 = require("pip-services3-commons-node");
+const pip_services3_commons_node_3 = require("pip-services3-commons-node");
+const pip_services3_commons_node_4 = require("pip-services3-commons-node");
 class GatewaysConnector {
     constructor(_logger, _gatewaysClient) {
         this._logger = _logger;
@@ -53,7 +53,7 @@ class GatewaysConnector {
     }
     resolveGateway(udi, callback) {
         if (udi == null) {
-            callback(new pip_services_commons_node_4.BadRequestException('mqtt-gateway', 'NO_GW_UDI', 'Gateway UDI is not defined'), null);
+            callback(new pip_services3_commons_node_4.BadRequestException('mqtt-gateway', 'NO_GW_UDI', 'Gateway UDI is not defined'), null);
             return;
         }
         // Retrieve from cache
@@ -64,10 +64,10 @@ class GatewaysConnector {
         }
         this._gatewaysClient.getGatewayByUdi('mqtt-gateway', udi, (err, gateway) => {
             if (err == null && gateway == null) {
-                err = new pip_services_commons_node_2.NotFoundException('mqtt-gateway', 'GW_NOT_FOUND', 'Gateway ' + udi + ' was not found').withDetails('udi', udi);
+                err = new pip_services3_commons_node_2.NotFoundException('mqtt-gateway', 'GW_NOT_FOUND', 'Gateway ' + udi + ' was not found').withDetails('udi', udi);
             }
             if (err == null && gateway && !gateway.active) {
-                err = new pip_services_commons_node_3.InvalidStateException('mqtt-gateway', 'GW_INACTIVE', 'Gateway ' + udi + ' is inactive').withDetails('udi', udi);
+                err = new pip_services3_commons_node_3.InvalidStateException('mqtt-gateway', 'GW_INACTIVE', 'Gateway ' + udi + ' is inactive').withDetails('udi', udi);
             }
             this.storeGatewayToCache(gateway);
             callback(err, gateway);
@@ -101,7 +101,7 @@ class GatewaysConnector {
             callback(null, gateways);
             return;
         }
-        this._gatewaysClient.getGateways('mqtt-gateway', pip_services_commons_node_1.FilterParams.fromTuples('org_id', orgId, 'active', true), null, (err, page) => {
+        this._gatewaysClient.getGateways('mqtt-gateway', pip_services3_commons_node_1.FilterParams.fromTuples('org_id', orgId, 'active', true), null, (err, page) => {
             if (page)
                 gateways = page.data;
             this.storeGatewaysToCache(orgId, gateways);

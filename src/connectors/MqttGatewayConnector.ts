@@ -1,13 +1,13 @@
 let _ = require('lodash');
 
-import { ConfigParams } from 'pip-services-commons-node';
-import { IConfigurable } from 'pip-services-commons-node';
-import { IReferences } from 'pip-services-commons-node';
-import { Descriptor } from 'pip-services-commons-node';
-import { IReferenceable } from 'pip-services-commons-node';
-import { IOpenable } from 'pip-services-commons-node';
-import { CompositeLogger } from 'pip-services-components-node';
-import { MqttConnectionResolver } from 'pip-services-mqtt-node';
+import { ConfigParams } from 'pip-services3-commons-node';
+import { IConfigurable } from 'pip-services3-commons-node';
+import { IReferences } from 'pip-services3-commons-node';
+import { Descriptor } from 'pip-services3-commons-node';
+import { IReferenceable } from 'pip-services3-commons-node';
+import { IOpenable } from 'pip-services3-commons-node';
+import { CompositeLogger } from 'pip-services3-components-node';
+import { MqttConnectionResolver } from 'pip-services3-mqtt-node';
 
 import { IMqttGatewayConnector } from './IMqttGatewayConnector';
 

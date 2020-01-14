@@ -1,4 +1,4 @@
-import { ILogger } from 'pip-services-components-node';
+import { ILogger } from 'pip-services3-components-node';
 import { GatewayV1 } from 'iqs-clients-gateways-node';
 import { IGatewaysClientV1 } from 'iqs-clients-gateways-node';
 export declare class GatewaysConnector {

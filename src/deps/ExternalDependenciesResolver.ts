@@ -1,8 +1,8 @@
-import { DependencyResolver } from 'pip-services-commons-node';
-import { ConfigParams } from 'pip-services-commons-node';
+import { DependencyResolver } from 'pip-services3-commons-node';
+import { ConfigParams } from 'pip-services3-commons-node';
 
-import { CompositeLogger } from 'pip-services-components-node';
-import { CompositeCounters } from 'pip-services-components-node';
+import { CompositeLogger } from 'pip-services3-components-node';
+import { CompositeCounters } from 'pip-services3-components-node';
 
 import { IOrganizationsClientV1 } from 'pip-clients-organizations-node';
 import { IDevicesClientV1 } from 'iqs-clients-devices-node';

@@ -1,4 +1,4 @@
-import { ILogger } from 'pip-services-components-node';
+import { ILogger } from 'pip-services3-components-node';
 import { OrganizationV1 } from 'pip-clients-organizations-node';
 import { IOrganizationsClientV1 } from 'pip-clients-organizations-node';
 export declare class OrganizationsConnector {

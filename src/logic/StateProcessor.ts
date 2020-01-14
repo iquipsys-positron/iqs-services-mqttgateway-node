@@ -1,8 +1,8 @@
 let _ = require('lodash');
 let async = require('async');
 
-import { ConfigParams } from 'pip-services-commons-node';
-import { IConfigurable } from 'pip-services-commons-node';
+import { ConfigParams } from 'pip-services3-commons-node';
+import { IConfigurable } from 'pip-services3-commons-node';
 
 import { OrganizationV1 } from 'pip-clients-organizations-node';
 import { GatewayV1 } from 'iqs-clients-gateways-node';
@@ -14,7 +14,7 @@ import { MessageProcessor } from './MessageProcessor';
 import { ExternalDependencies } from '../deps/ExternalDependencies';
 import { Message } from '../protocol/Message';
 import { StateUpdateMessage } from '../protocol/StateUpdateMessage';
-import { FilterParams } from 'pip-services-commons-node/obj/src/data/FilterParams';
+import { FilterParams } from 'pip-services3-commons-node/obj/src/data/FilterParams';
 import { DeviceStatusV1 } from 'iqs-clients-devices-node/obj/src/version1/DeviceStatusV1';
 
 export class StateProcessor extends MessageProcessor {

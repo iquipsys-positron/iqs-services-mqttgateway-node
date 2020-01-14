@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 let _ = require('lodash');
-const pip_services_components_node_1 = require("pip-services-components-node");
-const pip_services_mqtt_node_1 = require("pip-services-mqtt-node");
+const pip_services3_components_node_1 = require("pip-services3-components-node");
+const pip_services3_mqtt_node_1 = require("pip-services3-mqtt-node");
 class MqttGatewayConnector {
     constructor() {
-        this._connectionResolver = new pip_services_mqtt_node_1.MqttConnectionResolver();
-        this._logger = new pip_services_components_node_1.CompositeLogger();
+        this._connectionResolver = new pip_services3_mqtt_node_1.MqttConnectionResolver();
+        this._logger = new pip_services3_components_node_1.CompositeLogger();
         this._upTopic = '+/up';
         this._downTopic = '+/down';
     }

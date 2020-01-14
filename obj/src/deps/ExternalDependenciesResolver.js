@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const pip_services_commons_node_1 = require("pip-services-commons-node");
-const pip_services_commons_node_2 = require("pip-services-commons-node");
+const pip_services3_commons_node_1 = require("pip-services3-commons-node");
+const pip_services3_commons_node_2 = require("pip-services3-commons-node");
 const OrganizationsConnector_1 = require("./OrganizationsConnector");
 const GatewaysConnector_1 = require("./GatewaysConnector");
 const DevicesConnector_1 = require("./DevicesConnector");
 const ExternalDependencies_1 = require("./ExternalDependencies");
-class ExternalDependenciesResolver extends pip_services_commons_node_1.DependencyResolver {
+class ExternalDependenciesResolver extends pip_services3_commons_node_1.DependencyResolver {
     constructor() {
         super(ExternalDependenciesResolver._defaultConfig);
     }
@@ -25,5 +25,5 @@ class ExternalDependenciesResolver extends pip_services_commons_node_1.Dependenc
     }
 }
 exports.ExternalDependenciesResolver = ExternalDependenciesResolver;
-ExternalDependenciesResolver._defaultConfig = pip_services_commons_node_2.ConfigParams.fromTuples('dependencies.connector', 'iqs-services-mqttgateway:connector:*:*:1.0', 'dependencies.organizations', 'pip-services-organizations:client:*:*:1.0', 'dependencies.devices', 'iqs-services-devices:client:*:*:1.0', 'dependencies.gateways', 'iqs-services-gateways:client:*:*:1.0', 'dependencies.beacons', 'pip-services-beacons:client:*:*:1.0', 'dependencies.state-updates', 'iqs-services-stateupdates:client:*:*:1.0');
+ExternalDependenciesResolver._defaultConfig = pip_services3_commons_node_2.ConfigParams.fromTuples('dependencies.connector', 'iqs-services-mqttgateway:connector:*:*:1.0', 'dependencies.organizations', 'pip-services-organizations:client:*:*:1.0', 'dependencies.devices', 'iqs-services-devices:client:*:*:1.0', 'dependencies.gateways', 'iqs-services-gateways:client:*:*:1.0', 'dependencies.beacons', 'pip-services-beacons:client:*:*:1.0', 'dependencies.state-updates', 'iqs-services-stateupdates:client:*:*:1.0');
 //# sourceMappingURL=ExternalDependenciesResolver.js.map

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const pip_services_commons_node_1 = require("pip-services-commons-node");
+const pip_services3_commons_node_1 = require("pip-services3-commons-node");
 const GatewayInitMessage_1 = require("./GatewayInitMessage");
 const DeviceInitMessage_1 = require("./DeviceInitMessage");
 const StateUpdateMessage_1 = require("./StateUpdateMessage");
@@ -48,7 +48,7 @@ class IncomingMessageDecoder {
             }
         }
         if (message == null) {
-            callback(new pip_services_commons_node_1.BadRequestException('mqtt-gateway', 'BAD_MESSAGE', 'Received unknown or invalid message'), null);
+            callback(new pip_services3_commons_node_1.BadRequestException('mqtt-gateway', 'BAD_MESSAGE', 'Received unknown or invalid message'), null);
         }
         else {
             callback(null, message);

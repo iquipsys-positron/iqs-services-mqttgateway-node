@@ -1,11 +1,11 @@
 let _ = require('lodash');
 let async = require('async');
 
-import { FilterParams } from 'pip-services-commons-node';
-import { ILogger } from 'pip-services-components-node';
-import { NotFoundException } from 'pip-services-commons-node';
-import { InvalidStateException } from 'pip-services-commons-node';
-import { BadRequestException } from 'pip-services-commons-node';
+import { FilterParams } from 'pip-services3-commons-node';
+import { ILogger } from 'pip-services3-components-node';
+import { NotFoundException } from 'pip-services3-commons-node';
+import { InvalidStateException } from 'pip-services3-commons-node';
+import { BadRequestException } from 'pip-services3-commons-node';
 
 import { GatewayV1 } from 'iqs-clients-gateways-node';
 import { IGatewaysClientV1 } from 'iqs-clients-gateways-node';

@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const pip_services_commons_node_1 = require("pip-services-commons-node");
-const pip_services_commons_node_2 = require("pip-services-commons-node");
-const pip_services_commons_node_3 = require("pip-services-commons-node");
-const pip_services_commons_node_4 = require("pip-services-commons-node");
-const pip_services_commons_node_5 = require("pip-services-commons-node");
+const pip_services3_commons_node_1 = require("pip-services3-commons-node");
+const pip_services3_commons_node_2 = require("pip-services3-commons-node");
+const pip_services3_commons_node_3 = require("pip-services3-commons-node");
+const pip_services3_commons_node_4 = require("pip-services3-commons-node");
+const pip_services3_commons_node_5 = require("pip-services3-commons-node");
 const CommandValueV1Schema_1 = require("../data/version1/CommandValueV1Schema");
-class MqttGatewayCommandSet extends pip_services_commons_node_1.CommandSet {
+class MqttGatewayCommandSet extends pip_services3_commons_node_1.CommandSet {
     constructor(logic) {
         super();
         this._logic = logic;
@@ -20,11 +20,11 @@ class MqttGatewayCommandSet extends pip_services_commons_node_1.CommandSet {
         this.addCommand(this.makeRequestStatistisCommand());
     }
     makeSendCommandsCommand() {
-        return new pip_services_commons_node_2.Command("send_commands", new pip_services_commons_node_3.ObjectSchema(true)
-            .withRequiredProperty('org_id', pip_services_commons_node_5.TypeCode.String)
-            .withRequiredProperty('device_id', pip_services_commons_node_5.TypeCode.String)
-            .withRequiredProperty('commands', new pip_services_commons_node_4.ArraySchema(new CommandValueV1Schema_1.CommandValueV1Schema()))
-            .withOptionalProperty('timestamp', pip_services_commons_node_5.TypeCode.Integer), (correlationId, args, callback) => {
+        return new pip_services3_commons_node_2.Command("send_commands", new pip_services3_commons_node_3.ObjectSchema(true)
+            .withRequiredProperty('org_id', pip_services3_commons_node_5.TypeCode.String)
+            .withRequiredProperty('device_id', pip_services3_commons_node_5.TypeCode.String)
+            .withRequiredProperty('commands', new pip_services3_commons_node_4.ArraySchema(new CommandValueV1Schema_1.CommandValueV1Schema()))
+            .withOptionalProperty('timestamp', pip_services3_commons_node_5.TypeCode.Integer), (correlationId, args, callback) => {
             let orgId = args.getAsNullableString("org_id");
             let deviceId = args.getAsNullableString("device_id");
             let commands = args.getAsObject("commands");
@@ -35,10 +35,10 @@ class MqttGatewayCommandSet extends pip_services_commons_node_1.CommandSet {
         });
     }
     makeBroadcastCommandsCommand() {
-        return new pip_services_commons_node_2.Command("broadcast_commands", new pip_services_commons_node_3.ObjectSchema(true)
-            .withRequiredProperty('org_id', pip_services_commons_node_5.TypeCode.String)
-            .withRequiredProperty('commands', new pip_services_commons_node_4.ArraySchema(new CommandValueV1Schema_1.CommandValueV1Schema()))
-            .withOptionalProperty('timestamp', pip_services_commons_node_5.TypeCode.Integer), (correlationId, args, callback) => {
+        return new pip_services3_commons_node_2.Command("broadcast_commands", new pip_services3_commons_node_3.ObjectSchema(true)
+            .withRequiredProperty('org_id', pip_services3_commons_node_5.TypeCode.String)
+            .withRequiredProperty('commands', new pip_services3_commons_node_4.ArraySchema(new CommandValueV1Schema_1.CommandValueV1Schema()))
+            .withOptionalProperty('timestamp', pip_services3_commons_node_5.TypeCode.Integer), (correlationId, args, callback) => {
             let orgId = args.getAsNullableString("org_id");
             let deviceId = args.getAsNullableString("device_id");
             let commands = args.getAsObject("commands");
@@ -49,11 +49,11 @@ class MqttGatewayCommandSet extends pip_services_commons_node_1.CommandSet {
         });
     }
     makeSendSignalCommand() {
-        return new pip_services_commons_node_2.Command("send_signal", new pip_services_commons_node_3.ObjectSchema(true)
-            .withRequiredProperty('org_id', pip_services_commons_node_5.TypeCode.String)
-            .withRequiredProperty('device_id', pip_services_commons_node_5.TypeCode.String)
-            .withRequiredProperty('signal', pip_services_commons_node_5.TypeCode.Integer)
-            .withOptionalProperty('timestamp', pip_services_commons_node_5.TypeCode.Integer), (correlationId, args, callback) => {
+        return new pip_services3_commons_node_2.Command("send_signal", new pip_services3_commons_node_3.ObjectSchema(true)
+            .withRequiredProperty('org_id', pip_services3_commons_node_5.TypeCode.String)
+            .withRequiredProperty('device_id', pip_services3_commons_node_5.TypeCode.String)
+            .withRequiredProperty('signal', pip_services3_commons_node_5.TypeCode.Integer)
+            .withOptionalProperty('timestamp', pip_services3_commons_node_5.TypeCode.Integer), (correlationId, args, callback) => {
             let orgId = args.getAsNullableString("org_id");
             let deviceId = args.getAsNullableString("device_id");
             let signal = args.getAsInteger("signal");
@@ -64,10 +64,10 @@ class MqttGatewayCommandSet extends pip_services_commons_node_1.CommandSet {
         });
     }
     makeBroadcastSignalCommand() {
-        return new pip_services_commons_node_2.Command("broadcast_signal", new pip_services_commons_node_3.ObjectSchema(true)
-            .withRequiredProperty('org_id', pip_services_commons_node_5.TypeCode.String)
-            .withRequiredProperty('signal', pip_services_commons_node_5.TypeCode.Integer)
-            .withOptionalProperty('timestamp', pip_services_commons_node_5.TypeCode.Integer), (correlationId, args, callback) => {
+        return new pip_services3_commons_node_2.Command("broadcast_signal", new pip_services3_commons_node_3.ObjectSchema(true)
+            .withRequiredProperty('org_id', pip_services3_commons_node_5.TypeCode.String)
+            .withRequiredProperty('signal', pip_services3_commons_node_5.TypeCode.Integer)
+            .withOptionalProperty('timestamp', pip_services3_commons_node_5.TypeCode.Integer), (correlationId, args, callback) => {
             let orgId = args.getAsNullableString("org_id");
             let deviceId = args.getAsNullableString("device_id");
             let signal = args.getAsInteger("signal");
@@ -78,9 +78,9 @@ class MqttGatewayCommandSet extends pip_services_commons_node_1.CommandSet {
         });
     }
     makePingGatewayCommand() {
-        return new pip_services_commons_node_2.Command("ping_gateway", new pip_services_commons_node_3.ObjectSchema(true)
-            .withRequiredProperty('org_id', pip_services_commons_node_5.TypeCode.String)
-            .withRequiredProperty('gateway_id', pip_services_commons_node_5.TypeCode.String), (correlationId, args, callback) => {
+        return new pip_services3_commons_node_2.Command("ping_gateway", new pip_services3_commons_node_3.ObjectSchema(true)
+            .withRequiredProperty('org_id', pip_services3_commons_node_5.TypeCode.String)
+            .withRequiredProperty('gateway_id', pip_services3_commons_node_5.TypeCode.String), (correlationId, args, callback) => {
             let orgId = args.getAsNullableString("org_id");
             let gatewayId = args.getAsNullableString("gateway_id");
             this._logic.pingGateway(correlationId, orgId, gatewayId, (err) => {
@@ -89,9 +89,9 @@ class MqttGatewayCommandSet extends pip_services_commons_node_1.CommandSet {
         });
     }
     makePingDeviceCommand() {
-        return new pip_services_commons_node_2.Command("ping_device", new pip_services_commons_node_3.ObjectSchema(true)
-            .withRequiredProperty('org_id', pip_services_commons_node_5.TypeCode.String)
-            .withRequiredProperty('device_id', pip_services_commons_node_5.TypeCode.String), (correlationId, args, callback) => {
+        return new pip_services3_commons_node_2.Command("ping_device", new pip_services3_commons_node_3.ObjectSchema(true)
+            .withRequiredProperty('org_id', pip_services3_commons_node_5.TypeCode.String)
+            .withRequiredProperty('device_id', pip_services3_commons_node_5.TypeCode.String), (correlationId, args, callback) => {
             let orgId = args.getAsNullableString("org_id");
             let deviceId = args.getAsNullableString("device_id");
             this._logic.pingDevice(correlationId, orgId, deviceId, (err) => {
@@ -100,9 +100,9 @@ class MqttGatewayCommandSet extends pip_services_commons_node_1.CommandSet {
         });
     }
     makeRequestStatistisCommand() {
-        return new pip_services_commons_node_2.Command("request_statistics", new pip_services_commons_node_3.ObjectSchema(true)
-            .withRequiredProperty('org_id', pip_services_commons_node_5.TypeCode.String)
-            .withRequiredProperty('gateway_id', pip_services_commons_node_5.TypeCode.String), (correlationId, args, callback) => {
+        return new pip_services3_commons_node_2.Command("request_statistics", new pip_services3_commons_node_3.ObjectSchema(true)
+            .withRequiredProperty('org_id', pip_services3_commons_node_5.TypeCode.String)
+            .withRequiredProperty('gateway_id', pip_services3_commons_node_5.TypeCode.String), (correlationId, args, callback) => {
             let orgId = args.getAsNullableString("org_id");
             let gatewayId = args.getAsNullableString("gateway_id");
             this._logic.requestStatistics(correlationId, orgId, gatewayId, (err) => {

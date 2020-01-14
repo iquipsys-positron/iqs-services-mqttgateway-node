@@ -1,16 +1,16 @@
 let _ = require('lodash');
 let async = require('async');
 
-import { ConfigParams, Command } from 'pip-services-commons-node';
-import { IConfigurable } from 'pip-services-commons-node';
-import { IReferences } from 'pip-services-commons-node';
-import { ICommandable } from 'pip-services-commons-node';
-import { CommandSet } from 'pip-services-commons-node';
-import { IReferenceable } from 'pip-services-commons-node';
-import { DependencyResolver } from 'pip-services-commons-node';
-import { CompositeLogger } from 'pip-services-components-node';
-import { CompositeCounters } from 'pip-services-components-node';
-import { BadRequestException } from 'pip-services-commons-node';
+import { ConfigParams, Command } from 'pip-services3-commons-node';
+import { IConfigurable } from 'pip-services3-commons-node';
+import { IReferences } from 'pip-services3-commons-node';
+import { ICommandable } from 'pip-services3-commons-node';
+import { CommandSet } from 'pip-services3-commons-node';
+import { IReferenceable } from 'pip-services3-commons-node';
+import { DependencyResolver } from 'pip-services3-commons-node';
+import { CompositeLogger } from 'pip-services3-components-node';
+import { CompositeCounters } from 'pip-services3-components-node';
+import { BadRequestException } from 'pip-services3-commons-node';
 
 import { DeviceV1 } from 'iqs-clients-devices-node';
 import { DeviceTypeV1 } from 'iqs-clients-devices-node';

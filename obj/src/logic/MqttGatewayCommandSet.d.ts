@@ -1,4 +1,4 @@
-import { CommandSet } from 'pip-services-commons-node';
+import { CommandSet } from 'pip-services3-commons-node';
 import { IMqttGatewayController } from './IMqttGatewayController';
 export declare class MqttGatewayCommandSet extends CommandSet {
     private _logic;

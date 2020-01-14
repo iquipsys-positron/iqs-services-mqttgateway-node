@@ -1,4 +1,4 @@
-import { BadRequestException } from 'pip-services-commons-node';
+import { BadRequestException } from 'pip-services3-commons-node';
 
 import { Message } from './Message';
 import { GatewayInitMessage } from './GatewayInitMessage';

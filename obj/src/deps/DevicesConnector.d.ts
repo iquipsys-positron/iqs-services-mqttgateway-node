@@ -1,4 +1,4 @@
-import { ILogger } from 'pip-services-components-node';
+import { ILogger } from 'pip-services3-components-node';
 import { DeviceV1 } from 'iqs-clients-devices-node';
 import { IDevicesClientV1 } from 'iqs-clients-devices-node';
 export declare class DevicesConnector {

@@ -2,9 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 let _ = require('lodash');
 let async = require('async');
-const pip_services_components_node_1 = require("pip-services-components-node");
-const pip_services_components_node_2 = require("pip-services-components-node");
-const pip_services_commons_node_1 = require("pip-services-commons-node");
+const pip_services3_components_node_1 = require("pip-services3-components-node");
+const pip_services3_components_node_2 = require("pip-services3-components-node");
+const pip_services3_commons_node_1 = require("pip-services3-commons-node");
 const iqs_clients_devices_node_1 = require("iqs-clients-devices-node");
 const MqttGatewayCommandSet_1 = require("./MqttGatewayCommandSet");
 const ExternalDependenciesResolver_1 = require("../deps/ExternalDependenciesResolver");
@@ -19,8 +19,8 @@ const PingProcessor_1 = require("./PingProcessor");
 const StatisticsProcessor_1 = require("./StatisticsProcessor");
 class MqttGatewayController {
     constructor() {
-        this._logger = new pip_services_components_node_1.CompositeLogger();
-        this._counters = new pip_services_components_node_2.CompositeCounters();
+        this._logger = new pip_services3_components_node_1.CompositeLogger();
+        this._counters = new pip_services3_components_node_2.CompositeCounters();
         this._dependencyResolver = new ExternalDependenciesResolver_1.ExternalDependenciesResolver();
         this._initProcessor = new InitProcessor_1.InitProcessor();
         this._organizationInfoProcessor = new OrganizationInfoProcessor_1.OrganizationInfoProcessor();
@@ -80,7 +80,7 @@ class MqttGatewayController {
                 message.org_id = gateway.org_id;
             // Match gateway and organization
             if (gateway != null && message.org_id != '' && message.org_id != gateway.org_id) {
-                err = new pip_services_commons_node_1.BadRequestException('mqtt-gateway', 'SITE_MISMATCH', 'Gateway and organization are mismatched').withDetails('org_id', message.org_id);
+                err = new pip_services3_commons_node_1.BadRequestException('mqtt-gateway', 'SITE_MISMATCH', 'Gateway and organization are mismatched').withDetails('org_id', message.org_id);
             }
             callback(err, gateway);
         });
@@ -101,7 +101,7 @@ class MqttGatewayController {
         this._dependencies.devicesConnector.resolveDevice(orgId, deviceUdi, (err, device) => {
             // Match device and organization
             if (device != null && message.org_id != '' && message.org_id != device.org_id) {
-                err = new pip_services_commons_node_1.BadRequestException('mqtt-gateway', 'SITE_MISMATCH', 'Device and organization are mismatched').withDetails('org_id', message.org_id);
+                err = new pip_services3_commons_node_1.BadRequestException('mqtt-gateway', 'SITE_MISMATCH', 'Device and organization are mismatched').withDetails('org_id', message.org_id);
             }
             callback(err, device);
         });

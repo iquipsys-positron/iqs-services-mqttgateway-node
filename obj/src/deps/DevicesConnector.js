@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 let _ = require('lodash');
 let async = require('async');
-const pip_services_commons_node_1 = require("pip-services-commons-node");
-const pip_services_commons_node_2 = require("pip-services-commons-node");
+const pip_services3_commons_node_1 = require("pip-services3-commons-node");
+const pip_services3_commons_node_2 = require("pip-services3-commons-node");
 const iqs_clients_devices_node_1 = require("iqs-clients-devices-node");
 const iqs_clients_devices_node_2 = require("iqs-clients-devices-node");
 class DevicesConnector {
@@ -49,7 +49,7 @@ class DevicesConnector {
     }
     resolveDeviceWithoutorgId(udi, callback) {
         if (udi == '') {
-            callback(new pip_services_commons_node_2.BadRequestException('teltonika-gateway', 'NO_DEVICE_UDI', 'Device UDI is not defined'), null);
+            callback(new pip_services3_commons_node_2.BadRequestException('teltonika-gateway', 'NO_DEVICE_UDI', 'Device UDI is not defined'), null);
             return;
         }
         // Retrieve from cache
@@ -59,7 +59,7 @@ class DevicesConnector {
             callback(null, device);
             return;
         }
-        let filter = pip_services_commons_node_1.FilterParams.fromTuples('udi', udi, 'status', iqs_clients_devices_node_2.DeviceStatusV1.Active);
+        let filter = pip_services3_commons_node_1.FilterParams.fromTuples('udi', udi, 'status', iqs_clients_devices_node_2.DeviceStatusV1.Active);
         this._devicesClient.getDevices('mqtt-gateway', filter, null, (err, page) => {
             let devices = page != null ? page.data : null;
             this.storeDeviceToCache(devices[0]);
@@ -68,11 +68,11 @@ class DevicesConnector {
     }
     resolveDevice(orgId, udi, callback) {
         if (orgId == '') {
-            callback(new pip_services_commons_node_2.BadRequestException('mqtt-gateway', 'UNKNOWN_SITE', 'Cannot determine organization'), null);
+            callback(new pip_services3_commons_node_2.BadRequestException('mqtt-gateway', 'UNKNOWN_SITE', 'Cannot determine organization'), null);
             return;
         }
         if (udi == '') {
-            callback(new pip_services_commons_node_2.BadRequestException('mqtt-gateway', 'NO_DEVICE_UDI', 'Device UDI is not defined'), null);
+            callback(new pip_services3_commons_node_2.BadRequestException('mqtt-gateway', 'NO_DEVICE_UDI', 'Device UDI is not defined'), null);
             return;
         }
         // Retrieve from cache
@@ -106,7 +106,7 @@ class DevicesConnector {
         });
     }
     getDevicesByorgId(orgId, callback) {
-        this._devicesClient.getDevices('mqtt-gateway', pip_services_commons_node_1.FilterParams.fromTuples('org_id', orgId, 'status', iqs_clients_devices_node_2.DeviceStatusV1.Active), null, (err, page) => {
+        this._devicesClient.getDevices('mqtt-gateway', pip_services3_commons_node_1.FilterParams.fromTuples('org_id', orgId, 'status', iqs_clients_devices_node_2.DeviceStatusV1.Active), null, (err, page) => {
             let devices = page ? page.data : null;
             callback(err, devices);
         });

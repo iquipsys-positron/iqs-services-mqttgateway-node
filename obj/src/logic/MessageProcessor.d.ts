@@ -1,5 +1,5 @@
-import { ConfigParams } from 'pip-services-commons-node';
-import { IConfigurable } from 'pip-services-commons-node';
+import { ConfigParams } from 'pip-services3-commons-node';
+import { IConfigurable } from 'pip-services3-commons-node';
 import { GatewayV1 } from 'iqs-clients-gateways-node';
 import { DeviceV1 } from 'iqs-clients-devices-node';
 import { ExternalDependencies } from '../deps/ExternalDependencies';

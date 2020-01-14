@@ -4,7 +4,7 @@ const _ = require('lodash');
 const async = require('async');
 const MessageProcessor_1 = require("./MessageProcessor");
 const StateUpdateMessage2_1 = require("../protocol/StateUpdateMessage2");
-const FilterParams_1 = require("pip-services-commons-node/obj/src/data/FilterParams");
+const FilterParams_1 = require("pip-services3-commons-node/obj/src/data/FilterParams");
 const DeviceStatusV1_1 = require("iqs-clients-devices-node/obj/src/version1/DeviceStatusV1");
 class StateProcessor2 extends MessageProcessor_1.MessageProcessor {
     processMessage(gateway, device, message, callback) {
